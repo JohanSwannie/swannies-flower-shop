@@ -4,13 +4,13 @@ import { SignInContainer, ButtonContainer } from "./signin.styles";
 import InputForm from "./input-form.component";
 
 const initialFormFields = {
-  userid: "",
+  username: "",
   password: "",
 };
 
 const Signin = () => {
   const [formFields, setFormFields] = useState(initialFormFields);
-  const { userid, password } = formFields;
+  const { username, password } = formFields;
   const [userData, setUserData] = useState([]);
   const navigate = useNavigate();
 
@@ -36,13 +36,13 @@ const Signin = () => {
     document.getElementById("err").style.display = "none";
     const adminRecFound = userData.find(
       (user) =>
-        userid === user.userid &&
+        username === user.userid &&
         password === user.password &&
         user.permission === "administrator"
     );
     const custRecFound = userData.find(
       (user) =>
-        userid === user.userid &&
+        username === user.userid &&
         password === user.password &&
         user.permission === "customer"
     );
@@ -72,12 +72,12 @@ const Signin = () => {
       <span>Sign in with your Username and Password</span>
       <form onSubmit={handleSubmit}>
         <InputForm
-          label="Userid"
+          label="User Name"
           type="text"
           required
           onChange={handleChange}
-          name="userid"
-          value={userid}
+          name="username"
+          value={username}
         />
 
         <InputForm
