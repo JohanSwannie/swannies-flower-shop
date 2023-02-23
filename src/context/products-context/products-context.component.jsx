@@ -3,21 +3,6 @@ import { createContext, useState, useEffect } from "react";
 const removeTheProduct = (products, productToRemove) =>
   products.filter((product) => product.id !== productToRemove.id);
 
-const updateTheProduct = (products, productToUpdate) => {
-  const { sku, name, description, price } = productToUpdate;
-  products.map((product) => {
-    if (product.id === productToUpdate.id) {
-      product.sku = sku;
-      product.name = name;
-      product.description = description;
-      product.price = price;
-      return products;
-    } else {
-      return products;
-    }
-  });
-};
-
 export const ProductsContext = createContext({
   products: [],
   removeProduct: () => {},
@@ -43,7 +28,17 @@ export const ProductsProvider = ({ children }) => {
   };
 
   const updateProduct = (productToUpdate) => {
-    setProducts(updateTheProduct(products, productToUpdate));
+    const { sku, name, description, price } = productToUpdate;
+    products.map((product) => {
+      if (product.id === productToUpdate.id) {
+        product.id = productToUpdate.id;
+        product.sku = sku;
+        product.name = name;
+        product.description = description;
+        product.price = price;
+      }
+    });
+    setProducts(products);
   };
 
   const value = {
