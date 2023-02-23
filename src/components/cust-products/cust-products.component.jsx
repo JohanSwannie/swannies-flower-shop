@@ -23,7 +23,7 @@ const CustProducts = ({ product }) => {
         </li>
         <li>
           <span>Price: </span>
-          {price.toFixed(2)}
+          {price}
         </li>
       </ul>
       <button onClick={addProductToCart}>Add to cart</button>
