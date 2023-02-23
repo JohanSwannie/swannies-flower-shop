@@ -24,7 +24,6 @@ const AdminProducts = ({ product, index }) => {
   };
 
   const updateTheProduct = () => {
-    alert(sku);
     if (prodCode) {
       product.sku = prodCode;
     }

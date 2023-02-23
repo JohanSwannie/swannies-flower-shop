@@ -14,10 +14,14 @@ export const AdminProductsContainer = styled.div`
     border: 1px solid #000;
     padding: 0.1rem;
     margin-right: 0.3rem;
+    background-color: orange;
   }
 
   .prodvalue {
     margin-right: 0.3rem;
+    color: #fff;
+    font-weight: bold;
+    background-color: darkgreen;
   }
 
   span {
