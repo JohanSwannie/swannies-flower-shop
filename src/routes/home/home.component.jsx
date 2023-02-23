@@ -24,7 +24,7 @@ const Home = () => {
       <img
         src={ShoppingImage}
         style={{ width: "100%", maxHeight: "80vh", mixBlendMode: "multiply" }}
-        alt="companyLogo"
+        alt="companyImage"
       />
       <Outlet />
     </Fragment>
