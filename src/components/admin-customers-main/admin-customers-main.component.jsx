@@ -24,7 +24,7 @@ const AdministratorCustomers = () => {
       </Heading1>
       <Heading2>Customer Carts</Heading2>
       {custInfo.map((customer, index) => (
-        <AdminCustomers customer={customer} index={index} />
+        <AdminCustomers id={customer.id} customer={customer} index={index} />
       ))}
     </div>
   );

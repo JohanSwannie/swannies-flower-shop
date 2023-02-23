@@ -23,10 +23,11 @@ const AdministratorProducts = () => {
         <button onClick={adminHome}>Admin Home</button>
         <button onClick={home}>Home</button>
       </Heading1>
-      <Heading2>Products</Heading2>
-      {products.map((product) => (
-        <AdminProducts product={product} />
-      ))}
+      <Heading2>Products On Display</Heading2>
+      {products &&
+        products.map((product, index) => (
+          <AdminProducts key={index} product={product} />
+        ))}
     </div>
   );
 };

@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 export const AdminProductsContainer = styled.div`
-  min-width: 60%;
+  min-width: 80%;
   width: auto;
   height: 2.5rem;
-  margin: 0 25%;
+  margin: 0 10%;
 
   li {
     list-style: none;
@@ -21,6 +21,11 @@ export const AdminProductsContainer = styled.div`
   }
 
   span {
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  input {
     font-size: 12px;
     font-weight: bold;
   }
