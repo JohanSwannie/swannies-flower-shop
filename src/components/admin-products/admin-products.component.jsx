@@ -9,7 +9,7 @@ const initProdFields = {
   prodPrice: "",
 };
 
-const AdminProducts = ({ product }) => {
+const AdminProducts = ({ product, index }) => {
   const [productFields, setProductFields] = useState(initProdFields);
 
   const { prodCode, prodName, prodDescr, prodPrice } = productFields;
@@ -19,9 +19,12 @@ const AdminProducts = ({ product }) => {
   const { removeProduct } = useContext(ProductsContext);
   const { updateProduct } = useContext(ProductsContext);
 
-  const removeTheProduct = () => removeProduct(product);
+  const removeTheProduct = () => {
+    removeProduct(product);
+  };
 
   const updateTheProduct = () => {
+    alert(sku);
     if (prodCode) {
       product.sku = prodCode;
     }
@@ -45,7 +48,7 @@ const AdminProducts = ({ product }) => {
   return (
     <AdminProductsContainer>
       <ul>
-        <li>
+        <li key={product.id}>
           <button id="deleteButton" onClick={removeTheProduct}>
             Delete
           </button>
@@ -86,7 +89,7 @@ const AdminProducts = ({ product }) => {
             className="prodvalue"
             onChange={handleChange}
             name="prodPrice"
-            defaultValue={price.toFixed(2)}
+            defaultValue={price}
           />
         </li>
       </ul>
