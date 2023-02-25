@@ -36,6 +36,7 @@ export const ProductsProvider = ({ children }) => {
         product.name = name;
         product.description = description;
         product.price = price;
+        return products;
       }
     });
     setProducts(products);
