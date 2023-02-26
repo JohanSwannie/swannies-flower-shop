@@ -13,10 +13,14 @@ const FetchApi = () => {
     fetchItems();
   }, []);
 
-  if (!items) {
-    return <span data-testid="busyLoading">Loading the items...</span>;
-  }
-  return <span data-testid="successful">successful</span>;
+  return (
+    <div>
+      <div>
+        {items && <span data-testid="successful">successful</span>}
+        {!items && <span data-testid="busyLoading">Loading the items...</span>}
+      </div>
+    </div>
+  );
 };
 
 export default FetchApi;
