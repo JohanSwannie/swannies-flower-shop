@@ -7,6 +7,7 @@ import { Heading1, Heading2 } from "./admin-products-main.styles";
 
 const AdministratorProducts = () => {
   const { products } = useContext(ProductsContext);
+
   const navigate = useNavigate();
 
   const adminHome = () => {
